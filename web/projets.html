@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio d'Apprentissage - Julien Garcia</title>
+    <link rel="stylesheet" type="text/css" href="../ressources/css/commun.css">
+    <link rel="stylesheet" type="text/css" href="../ressources/css/projets.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Julien GARCIA</a>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="projets.html">Mes Projets</a></li>
+                    <li><a href="apprentissage.html">Apprentissage</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="../ressources/images/e-commerce.jpg" alt="">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Site E-Commerce</h2>
+                    <p class="project-description">
+                        Réalisation d'un site de e-commerce innovant centré sur la vente de de déguisement pour animaux.
+                        Nous accordons une attention particulière à l'expérience utilisateur avec des animations dynamiques, un parcours d'achat optimisé, et une identité visuelle forte.
+                        Ce site e-commerce est pensé à la fois comme une réalisation technique complète et une vitrine professionnelle valorisable en entretien.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">HTML/CSS</span>
+                    </div>
+                    <a href="#" class="project-link">Voir le projet</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="../ressources/images/train.jpg" alt="">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Application Trains</h2>
+                    <p class="project-description">
+
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">JavaFx</span>
+                    </div>
+                    <a href="#" class="project-link">Voir le projet</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="../ressources/images/ndi.png" alt="">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Nuit de l'Info 2024</h2>
+                    <p class="project-description">Une application mobile complète pour le suivi des activités sportives, offrant des plans d'entraînement personnalisés, des analyses de performance et une intégration avec les appareils connectés. L'application utilise des algorithmes avancés pour optimiser les routines d'exercices...</p>
+                    <div class="project-tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">HTML/CSS</span>
+                    </div>
+                    <a href="#" class="project-link">Voir le projet</a>
+                </div>
+            </div>
+          
+            <div class="project-card">
+                <div class="project-image">
+                    <div>🔐</div>
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Intégration d'une application de partage d'information sécurisé (PrivateBin)</h2>
+                    <p class="project-description">
+                        
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">PHP</span>
+                    </div>
+                    <a href="#" class="project-link">Voir le projet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="projets.html">Mes projets</a></li>
+                    <li><a href="apprentissage.html">Apprentissage</a></li>
+                </ul>
+            </nav>
+            
+            <div class="copyright">
+                &copy; 2025 Julien Garcia. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                
+                // Animate hamburger menu
+                const spans = menuToggle.querySelectorAll('span');
+                spans.forEach(span => span.classList.toggle('active'));
+            });
+        }
+        
+        // Scrolling Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
