@@ -22,4 +22,4 @@ Ce portfolio me permet de présenter :
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/garciaj/portfolio.git
+   git clone https://github.com/ju-grc/portfolio.git
