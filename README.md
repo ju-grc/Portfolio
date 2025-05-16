@@ -11,8 +11,7 @@ Ce portfolio me permet de présenter :
 - Mes projets
 - Mes contacts
 
-📸 Une démo est disponible ici : [LIEN VERS LE PORTFOLIO EN LIGNE]  
-*(Par exemple : GitHub Pages, Netlify ou Vercel)*
+📸 Une démo est disponible ici : https://ju-grc.github.io/Portfolio/web/
 
 ## 🛠️ Technologies utilisées
 
@@ -23,4 +22,4 @@ Ce portfolio me permet de présenter :
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/ton-utilisateur/ton-portfolio.git
+   git clone https://github.com/garcia/portfolio.git
