@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet PrivateBin - Installation et Configuration</title>
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/commun.css">
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/details_projets.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo"><img src="../ressources/images/logo.png" alt=""></a>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../projets.html">Mes Projets</a></li>
+                    <li><a href="../apprentissage.html">Apprentissage</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <div class="head">
+        <div class="container">
+            <h1 class="project-title">Installation et Configuration de PrivateBin</h1>
+            <p class="project-subtitle">Un service de partage de notes confidentiel et sécurisé</p>
+        </div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="../projets.html" class="breadcrumb-link">Projets</a></li>
+                <li class="breadcrumb-item active">Installation et Configuration de PrivateBin</li>
+            </ul>
+        </div>
+    </div>
+    
+    <main class="container">
+        <section class="content-section">
+            <h2 class="section-title">Contexte du projet</h2>
+            <div class="section-content">
+                <p>
+                    Durant mon stage de 2ème année au sein de l'équipe technique  de la société CibleWeb, j'ai été chargé de mettre en place une solution sécurisée de partage de notes 
+                    et de textes confidentiels pour les équipes internes et clients.
+                </p>
+                
+                <div class="summary-box">
+                    <div class="summary-item">
+                        <span class="summary-label">Type de projet :</span> Mise en place d'infrastructure durant un stage professionnel
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Durée :</span> 10 semaines
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Équipe :</span> Projet individuel avec supervision du responsable infrastructure
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Contraintes :</span> Sécurité maximale, respect du RGPD, facilité d'utilisation, documentation complète
+                    </div>
+                </div>
+                
+                <p>
+                    L'entreprise avait besoin d'une alternative sécurisée aux services publics comme Pastebin pour échanger des informations sensibles entre les membres de l'équipe 
+                    technique et les développeurs et les clients. Après une phase d'analyse des besoins et de recherche de solutions, PrivateBin a été identifié comme l'outil le plus 
+                    adapté car :
+                </p>
+                
+                <ul class="steps-list">
+                    <li>Open source et auto-hébergeable</li>
+                    <li>Chiffrement côté client (Zero knowledge)</li>
+                    <li>Options de destruction automatique des données</li>
+                    <li>Interface simple et efficace</li>
+                    <li>Aucune base de données requise</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">Méthodes de travail et résultats obtenus</h2>
+            
+            <h3 class="section-subtitle">Phase 1 : Documentation et Préparation</h3>
+            <div class="section-content">
+                <p>J'ai commencé par établir un plan d'implémentation détaillé en collaboration avec mon tuteur de stage. Cette première phase a consisté à :</p>
+                <ul class="steps-list">
+                    <li>Analyser la documentation officielle de PrivateBin</li>
+                    <li>Préparer l'environnement serveur</li>
+                    <li>Définir les besoins en termes de sécurité et de configuration</li>
+                    <li>Créer un document de suivi pour le projet</li>
+                </ul>
+            </div>
+            
+            <h3 class="section-subtitle">Phase 2 : Installation et configuration</h3>
+            <div class="section-content">
+                <p>L'installation de PrivateBin a été réalisée à partir des sources GitHub pour garantir l'utilisation de la version la plus récente et sécurisée :</p>
+                
+                <div class="terminal">
+                    <div class="terminal-line command">$ cd /var/www/html/</div>
+                    <div class="terminal-line command">$ sudo git clone https://github.com/PrivateBin/PrivateBin.git privatebin</div>
+                    <div class="terminal-line result">Cloning into 'privatebin'...</div>
+                    <div class="terminal-line result">remote: Enumerating objects: 14731, done.</div>
+                    <div class="terminal-line result">...</div>
+                    <div class="terminal-line command">$ sudo chown -R www-data:www-data /var/www/html/privatebin</div>
+                    <div class="terminal-line command">$ sudo chmod -R 750 /var/www/html/privatebin</div>
+                </div>
+                
+                <p>Personnalisation du fichier de configuration pour adapter le service aux besoins de l'entreprise :</p>
+                
+                <div class="terminal">
+                    <div class="terminal-line command">$ sudo cp /var/www/html/privatebin/cfg/conf.sample.php /var/www/html/privatebin/cfg/conf.php</div>
+                    <div class="terminal-line command">$ sudo nano /var/www/html/privatebin/cfg/conf.php</div>
+                </div>
+                
+                <div class="highlight">
+                    <p>Principales modifications du fichier de configuration :</p>
+                    <ul class="steps-list">
+                        <li>Définition d'une durée maximale de conservation des notes (7 jours)</li>
+                        <li>Activation de l'auto-destruction après lecture</li>
+                        <li>Configuration du chiffrement AES-256</li>
+                        <li>Mise en place d'une politique de mots de passe pour les notes protégées</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">Phase 3 : Personnalisation de l'interface</h3>
+            <div class="section-content">
+                <p>Afin de renforcer l'identité visuelle de l'entreprise et d'améliorer l'expérience utilisateur, j'ai entrepris de personnaliser l'interface de PrivateBin pour l'aligner sur le design du site principal de l'entreprise :</p>
+                
+                <ul class="steps-list">
+                    <li>Analyse de la charte graphique de l'entreprise (couleurs, polices, styles)</li>
+                    <li>Création d'un thème CSS personnalisé pour PrivateBin</li>
+                    <li>Intégration du logo et des éléments visuels de l'entreprise</li>
+                    <li>Adaptation de l'expérience utilisateur pour la rendre cohérente avec les autres outils internes</li>
+                </ul>
+                
+                <div class="terminal">
+                    <div class="terminal-line command">$ cd /var/www/html/privatebin/css/</div>
+                    <div class="terminal-line command">$ sudo mkdir custom</div>
+                    <div class="terminal-line command">$ sudo nano /var/www/html/privatebin/css/custom/enterprise-theme.css</div>
+                </div>
+                
+                <img src="../../ressources/images/projets/privatebin.png" alt="Après la personnalisation de l'interface" class="screenshot">
+                
+                <div class="highlight">
+                    <p>Éléments personnalisés :</p>
+                    <ul class="steps-list">
+                        <li>Palette de couleurs adaptée à l'identité visuelle de l'entreprise</li>
+                        <li>Polices d'écriture harmonisées avec le site principal</li>
+                        <li>En-tête intégrant le logo et les éléments de navigation standardisés</li>
+                        <li>Messages et instructions personnalisés pour les utilisateurs internes</li>
+                        <li>Adaptation du responsive design pour assurer une bonne expérience sur mobile</li>
+                    </ul>
+                </div>
+                
+                <p>
+                    Les retours des utilisateurs sur l'interface personnalisée ont été extrêmement positifs, notant particulièrement la sensation d'utiliser un outil "maison" plutôt 
+                    qu'une solution externe, ce qui a renforcé l'adoption de l'outil.
+                </p>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">Apprentissages réalisés</h2>
+            
+            <h3 class="section-subtitle">Apprentissages techniques</h3>
+            <div class="section-content">
+                <p>Ce projet m'a permis de développer plusieurs compétences techniques :</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4 class="skill-title">Administration Linux</h4>
+                        <p class="skill-description">Approfondissement de mes connaissances en gestion de serveurs Ubuntu, notamment la configuration des droits d'accès et la sécurisation du système.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <h4 class="skill-title">Configuration de serveur web</h4>
+                        <p class="skill-description">Maîtrise avancée de la configuration d'Apache, y compris la mise en place de virtual hosts et l'optimisation des performances.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <h4 class="skill-title">Sécurité web</h4>
+                        <p class="skill-description">Compréhension approfondie des mécanismes de chiffrement, des en-têtes de sécurité HTTP et des bonnes pratiques pour protéger une application web.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <h4 class="skill-title">Gestion de projets d'infrastructure</h4>
+                        <p class="skill-description">Mise en œuvre d'une méthodologie de déploiement structurée, de la planification aux tests en passant par la documentation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">Apprentissages humains</h3>
+            <div class="section-content">
+                <p>Au-delà des aspects techniques, ce projet m'a apporté de précieux enseignements sur le plan humain :</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4 class="skill-title">Communication technique</h4>
+                        <p class="skill-description">J'ai appris à vulgariser des concepts techniques complexes pour former les utilisateurs non-techniques à l'utilisation sécurisée de l'outil.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <h4 class="skill-title">Autonomie et initiative</h4>
+                        <p class="skill-description">Ce projet m'a permis de gagner en autonomie en prenant des décisions techniques importantes tout en sachant quand solliciter l'aide de mon tuteur.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <h4 class="skill-title">Gestion du temps</h4>
+                        <p class="skill-description">J'ai dû organiser mon travail efficacement pour respecter les délais tout en garantissant la qualité de l'installation et de la documentation.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <h4 class="skill-title">Adaptabilité</h4>
+                        <p class="skill-description">Face aux difficultés techniques rencontrées, j'ai développé ma capacité à trouver rapidement des solutions alternatives et à m'adapter aux contraintes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">Compétences travaillées</h2>
+            <div class="section-content">
+                <p>Ce projet a contribué au développement des compétences suivantes :</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4 class="skill-title">Sécurité informatique</h4>
+                        <p class="skill-description">
+                            <span class="tag">Chiffrement</span>
+                            <span class="tag">Zero Knowledge</span>
+                            <span class="tag">HTTPS</span>
+                            <span class="tag">Hardening</span>
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <h4 class="skill-title">Documentation</h4>
+                        <p class="skill-description">
+                            <span class="tag">Documentation technique</span>
+                            <span class="tag">Guide utilisateur</span>
+                            <span class="tag">Procédures</span>
+                        </p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <h4 class="skill-title">Gestion de projet</h4>
+                        <p class="skill-description">
+                            <span class="tag">Planification</span>
+                            <span class="tag">Tests</span>
+                            <span class="tag">Déploiement</span>
+                            <span class="tag">Formation</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <p><strong>Contribution personnelle :</strong> Ce projet a été réalisé individuellement sous la supervision de mon tuteur de stage. J'ai été responsable de l'intégralité du processus, de l'analyse des besoins à la formation des utilisateurs, en passant par l'installation et la configuration du service.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../projets.html">Mes projets</a></li>
+                    <li><a href="../apprentissage.html">Apprentissage</a></li>
+                </ul>
+            </nav>
+            
+            <div class="copyright">
+                &copy; 2025 Julien Garcia. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

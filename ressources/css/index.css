@@ -54,6 +54,11 @@
     flex: 1;
 }
 
+.about-text p {
+    text-align: justify;
+    justify-content: none;
+}
+
 .about-image-mosaic {
     display: flex;
     gap: 1rem;
@@ -233,6 +238,22 @@
 .lienProjets a {
     text-decoration: none;
     color: white;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.back-link:hover {
+    background-color: #1e40af;
 }
 
 /* Quote Section */
