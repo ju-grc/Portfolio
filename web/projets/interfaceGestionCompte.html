@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julien Garcia - Projet Interface de Gestion</title>
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/commun.css">
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/details_projets.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo"><img src="../ressources/images/logo.png" alt=""></a>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../projets.html">Mes Projets</a></li>
+                    <li><a href="../apprentissage.html">Apprentissage</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="head">
+        <div class="container">
+            <h1 class="project-title">Interface de Gestion Commerciale et Comptable</h1>
+            <p class="project-subtitle">Un outil de suivi des paiements et de la facturation</p>
+        </div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="../projets.html" class="breadcrumb-link">Projets</a></li>
+                <li class="breadcrumb-item active">Interface de Gestion Commerciale et Comptable</li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="content-section">
+            <h2 class="section-title">Contexte du projet</h2>
+            <div class="section-content">
+                <p>
+                    Dans le cadre d’un projet d’équipe réalisé en BTS SIO, nous avons conçu une application web permettant à une PME de gérer ses activités commerciales et comptables de manière centralisée.
+                </p>
+
+                <div class="summary-box">
+                    <div class="summary-item">
+                        <span class="summary-label">Type de projet :</span> Projet scolaire collaboratif
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Durée :</span> 6 semaines
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Équipe :</span> Groupe de 3 étudiants
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Contraintes :</span> Simplicité d’utilisation, respect des règles comptables, interface intuitive, base de données relationnelle
+                    </div>
+                </div>
+
+                <p>
+                    L’objectif était de proposer une solution sur mesure qui remplace les tableurs Excel utilisés jusque-là, avec une automatisation des factures, du suivi client, et un accès sécurisé aux données.
+                </p>
+
+                <ul class="steps-list">
+                    <li>Gestion des clients, devis, factures, règlements</li>
+                    <li>Suivi des paiements et relances automatiques</li>
+                    <li>Génération de rapports comptables simples</li>
+                    <li>Interface sécurisée par authentification</li>
+                    <li>Export PDF pour les documents comptables</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Méthodes de travail et résultats obtenus</h2>
+
+            <h3 class="section-subtitle">Analyse et conception</h3>
+            <div class="section-content">
+                <p>Nous avons commencé par recueillir les besoins du client fictif à travers un cahier des charges, puis :</p>
+                <ul class="steps-list">
+                    <li>Création de diagrammes UML (cas d’utilisation, classe, séquence)</li>
+                    <li>Modélisation de la base de données relationnelle (MySQL)</li>
+                    <li>Choix de l’architecture technique (PHP / HTML / CSS / JS / MySQL)</li>
+                </ul>
+            </div>
+
+            <h3 class="section-subtitle">Développement et intégration</h3>
+            <div class="section-content">
+                <p>La réalisation de l’interface s’est faite en plusieurs itérations :</p>
+
+                <ul class="steps-list">
+                    <li>Page d’accueil avec tableau de bord dynamique (chiffre d’affaires, factures en attente...)</li>
+                    <li>Module de gestion client (CRUD)</li>
+                    <li>Création automatique de factures à partir de devis</li>
+                    <li>Génération de PDF avec FPDF</li>
+                    <li>Système d’authentification et gestion des rôles</li>
+                </ul>
+
+                <img src="../../ressources/images/projets/interface-gestion.png" alt="Interface de gestion commerciale" class="screenshot">
+
+                <div class="highlight">
+                    <p>Outils et technologies utilisés :</p>
+                    <ul class="steps-list">
+                        <li>PHP (programmation orientée objet)</li>
+                        <li>MySQL (conception relationnelle)</li>
+                        <li>HTML5 / CSS3 / JavaScript vanilla</li>
+                        <li>FPDF pour l’export PDF</li>
+                        <li>GitHub pour le versioning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Résultats</h3>
+            <div class="section-content">
+                <p>Le client a pu visualiser une version fonctionnelle lors d’une démonstration. Les fonctionnalités de génération de devis et de factures, ainsi que l’organisation claire de l’interface ont été saluées.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Apprentissages réalisés</h2>
+
+            <h3 class="section-subtitle">Apprentissages techniques</h3>
+            <div class="section-content">
+                <p>Ce projet m’a permis de renforcer plusieurs domaines clés :</p>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4 class="skill-title">Développement full stack</h4>
+                        <p class="skill-description">Création d’une application complète, de la base de données à l’interface utilisateur.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4 class="skill-title">Modélisation de données</h4>
+                        <p class="skill-description">Construction d’un schéma relationnel solide, normalisation des tables et requêtes SQL avancées.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4 class="skill-title">Gestion d’authentification</h4>
+                        <p class="skill-description">Mise en place d’un système sécurisé avec sessions PHP et rôles utilisateur.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4 class="skill-title">Génération dynamique de documents</h4>
+                        <p class="skill-description">Création de documents PDF à la volée avec FPDF en fonction des données stockées.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Apprentissages humains</h3>
+            <div class="section-content">
+                <p>Le travail en équipe m’a permis de progresser également sur le plan humain :</p>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4 class="skill-title">Travail en équipe</h4>
+                        <p class="skill-description">Répartition équitable des tâches, coordination et revue de code entre binômes.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4 class="skill-title">Organisation</h4>
+                        <p class="skill-description">Utilisation de Trello pour suivre l’avancement des tâches et des bugs à corriger.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4 class="skill-title">Autonomie</h4>
+                        <p class="skill-description">Prise d’initiative dans le développement des modules de devis et facturation.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4 class="skill-title">Esprit critique</h4>
+                        <p class="skill-description">Analyse des besoins pour proposer des améliorations à l’interface utilisateur.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Compétences travaillées</h2>
+            <div class="section-content">
+                <p>Ce projet a permis de consolider les compétences suivantes :</p>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4 class="skill-title">Développement web</h4>
+                        <p class="skill-description">
+                            <span class="tag">PHP</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">FPDF</span>
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4 class="skill-title">Base de données</h4>
+                        <p class="skill-description">
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Modélisation</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Requêtes</span>
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h4 class="skill-title">Gestion de projet</h4>
+                        <p class="skill-description">
+                            <span class="tag">Méthodologie agile</span>
+                            <span class="tag">Travail d’équipe</span>
+                            <span class="tag">Cahier des charges</span>
+                            <span class="tag">Planification</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <p><strong>Contribution personnelle :</strong> J’ai pris en charge la partie facturation, la génération de PDF et l’intégration graphique, tout en participant activement à la gestion de projet et à la documentation technique.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../projets.html">Mes projets</a></li>
+                    <li><a href="../apprentissage.html">Apprentissage</a></li>
+                </ul>
+            </nav>
+
+            <div class="copyright">
+                &copy; 2025 Julien Garcia. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

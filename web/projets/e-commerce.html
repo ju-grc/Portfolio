@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julien Garcia - Site E-Commerce</title>
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/commun.css">
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/details_projets.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo"><img src="../ressources/images/logo.png" alt=""></a>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../projets.html">Mes Projets</a></li>
+                    <li><a href="../apprentissage.html">Apprentissage</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <div class="head">
+        <div class="container">
+            <h1 class="project-title">Site E-Commerce</h1>
+            <p class="project-subtitle">Site de vente de déguisements pour animaux</p>
+        </div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="../projets.html" class="breadcrumb-link">Projets</a></li>
+                <li class="breadcrumb-item active">Site E-Commerce</li>
+            </ul>
+        </div>
+    </div>
+    
+    <main class="container">
+        <section class="content-section">
+            <h2 class="section-title">Contexte du projet</h2>
+            <div class="section-content">
+                <p>
+                    Ce projet a été réalisé dans le cadre du module de développement Web dispensé à l’IUT de Montpellier, dans le but de mettre en pratique l’ensemble des compétences 
+                    acquises durant les séances de TD, notamment sur les technologies web côté serveur (PHP, MySQL), le versionnage avec Git, et le déploiement sur un serveur distant.
+                </p>
+
+                <p>
+                    L’objectif principal était de développer un site de e-commerce fonctionnel, dont le thème (produits vendus) était laissé à l’appréciation du groupe. 
+                    Le projet devait être conçu en équipe de trois étudiants, avec une rigueur professionnelle : gestion du code source sur GitLab, déploiement sur un serveur 
+                    universitaire (webinfo), et soutenance orale basée sur une démonstration technique et des questions sur le code.
+                </p>
+                
+                <h3>Enjeux pédagogiques</h3>
+                <div class="summary-box">
+                    <div class="summary-item">
+                        Concevoir une application web dynamique en PHP suivant le modèle MVC.
+                    </div>
+                    <div class="summary-item">
+                        Manipuler une base de données relationnelle (MySQL) pour stocker les utilisateurs et les produits.
+                    </div>
+                    <div class="summary-item">
+                        Travailler en équipe sur un projet commun en respectant les bonnes pratiques de versionnage via Git.
+                    </div>
+                    <div class="summary-item">
+                        Apprendre à déployer un site web sur un environnement Linux distant (via SFTP et SSH).
+                    </div>
+                    <div class="summary-item">
+                        Préparer une soutenance technique sans support visuel, reposant uniquement sur la qualité du code et la capacité à l’expliquer.
+                    </div>
+                </div>
+                <p>Le projet constituait une part importante de la note finale du module, complétée par une évaluation écrite.</p>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">Méthodes de travail et résultats obtenus</h2>
+            
+            <h3 class="section-subtitle">Phase 1 : Organisation et Planning</h3>
+            <div class="section-content">
+                <p>Nous avons commencé par établir un plan d'implémentation détaillé en collaboration avec mon tuteur de stage. Cette première phase a consisté à :</p>
+                <ul class="steps-list">
+                    <li>Définition du thème : Déguisements pour animaux</li>
+                    <li>Configuration du dépôt GitLab pour partager et suivre l’avancement du projet</li>
+                    <li>Hébergement du site sur le serveur webinfo avec des droits configurés via SSH et SFTP</li>
+                    <li>Créer un document de suivi pour le projet</li>
+                </ul>
+            </div>
+            
+            <h3 class="section-subtitle">Phase 2 : fonctionnalités développées</h3>
+            <div class="section-content">
+                <p></p>
+                <ul class="steps-list">
+                    <li>Une page listant les produits disponibles, avec affichage dynamique des informations depuis une base de données SQL.</li>
+                    <li>Une page de détails pour chaque produit, incluant son prix, sa description et un bouton "Ajouter au panier" (non fonctionnel à ce stade, comme demandé).</li>
+                    <li>Un système d’administration pour ajouter et modifier les produits directement depuis l’interface Web.</li>
+                </ul>
+            </div>
+            
+            <h3 class="section-subtitle">Phase 3 : Réslutats obtenus</h3>
+            <div class="section-content">
+                <p>Le site est fonctionnel, hébergé et accessible à l’adresse suivante : <a href="https://webinfo.iutmontp.univ-montp2.fr/~garciaj/projet-web-deguisements-animaux/web/controleurFrontal.php">https://webinfo.iutmontp.univ-montp2.fr/~garciaj/projet-web-deguisements-animaux/web/controleurFrontal.php</a></p>
+                
+                <img src="../../ressources/images/projets/pap.png" alt="interface site" class="screenshot">
+                
+                <div class="highlight">
+                   
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Contribution personnelle</h2>
+            <p>
+                Dans ce projet, j’ai contribué en réalisant différentes parties clés de l’application en allant de la création du compte, jusqu'à la suppression
+            </p>
+
+            <h3 class="section-subtitle">Inscription / Création de compte</h3>
+            <div class="section-content">
+                <img src="../../ressources/images/projets/pap_inscription.png" alt="pap inscription" class="screenshot">
+            </div>
+
+            <h3 class="section-subtitle">Connexion</h3>
+            <div class="section-content">
+               <img src="../../ressources/images/projets/pap_connexion.png" alt="pap connexion" class="screenshot">
+            </div>
+
+            <h3 class="section-subtitle">Page du compte</h3>
+            <div class="section-content">
+               <img src="../../ressources/images/projets/pap_compte.png" alt="pap compte" class="screenshot">
+            </div>
+            <div class="highlight">
+                <p>Cette page révèle une erreur dû à l'historique des commandes, nous avons eu quelques problèmes lors de la conception du backend</p>
+            </div>
+
+            <h3 class="section-subtitle">Accès administrateurs</h3>
+            <div class="section-content">
+               <img src="../../ressources/images/projets/pap_accès_admin.png" alt="pap accès admin" class="screenshot">
+            </div>
+            <div class="highlight">
+                <p>Ici, avec le rôle d'admin sur le site, nous pouvons modifier n'importe quel informations de chaque utilisateurs, de même, supprimer des comptes.</p>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">Apprentissages réalisés</h2>
+            
+            <div class="section-content">
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4 class="skill-title">Développement backend</h4>
+                        <p class="skill-description">Utilisation du language PHP, respectant un modèle MVC, gestion de la partie utilisateurs</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <h4 class="skill-title">Développement frontend</h4>
+                        <p class="skill-description">Réalisation d'un design cohérent, optimisation pour une navigation intuitive</p>
+                    </div>
+                    
+                    
+
+                    <div class="skill-card">
+                        <h4 class="skill-title">Adaptabilité</h4>
+                        <p class="skill-description">Face aux difficultés techniques rencontrées, j'ai développé ma capacité à trouver rapidement des solutions alternatives et à m'adapter aux contraintes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">Compétences travaillées</h2>
+            <div class="section-content">
+                <p>Ce projet a contribué au développement des compétences suivantes :</p>
+                
+                
+                
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../projets.html">Mes projets</a></li>
+                    <li><a href="../apprentissage.html">Apprentissage</a></li>
+                </ul>
+            </nav>
+            
+            <div class="copyright">
+                &copy; 2025 Julien Garcia. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
