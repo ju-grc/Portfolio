@@ -68,7 +68,7 @@
                     <li>Gestion des clients, devis, factures, règlements</li>
                     <li>Suivi des paiements</li>
                     <li>Interface sécurisée par authentification</li>
-                    <li>Import / Export PDF pour les documents comptables</li>
+                    <li>Import / Export Excel pour les documents comptables</li>
                 </ul>
             </div>
         </section>
@@ -78,43 +78,113 @@
 
             <h3 class="section-subtitle">Analyse et conception</h3>
             <div class="section-content">
-                <p>Nous avons commencé par recueillir les besoins du client fictif à travers un cahier des charges, puis :</p>
+                <p>J'ai commencé par recueillir les besoins du client fictif à travers un cahier des charges détaillé, ce qui m’a permis de définir clairement les attentes 
+                    fonctionnelles et techniques du projet. Cette étape s’est traduite par :</p>
                 <ul class="steps-list">
-                    <li>Création de diagrammes UML (cas d’utilisation, classe, séquence)</li>
-                    <li>Modélisation de la base de données relationnelle (MySQL)</li>
-                    <li>Choix de l’architecture technique (PHP / HTML / CSS / JS / MySQL)</li>
+                    <li>La création de diagrammes UML : cas d’utilisation, classes et séquences.</li>
+                    <li>La modélisation de la base de données relationnelle avec MySQL.</li>
+                    <li>Le choix de l’architecture technique : un environnement full-stack basé sur PHP, HTML/CSS, JavaScript et MySQL.</li>
                 </ul>
             </div>
 
             <h3 class="section-subtitle">Développement et intégration</h3>
             <div class="section-content">
-                <p>La réalisation de l’interface s’est faite en plusieurs itérations :</p>
-
+                <p>Le développement de l’application s’est déroulé de manière itérative, avec des phases successives de maquettage, de codage et de tests. Parmi les principales réalisations :</p>
                 <ul class="steps-list">
-                    <li>Page d’accueil avec tableau de bord dynamique (chiffre d’affaires, factures en attente...)</li>
-                    <li>Module de gestion client (CRUD)</li>
-                    <li>Création automatique de factures à partir de devis</li>
-                    <li>Génération de PDF avec FPDF</li>
-                    <li>Système d’authentification et gestion des rôles</li>
+                    <li>Une page d’accueil avec tableau de bord dynamique, affichant les informations du compte, les données bancaires, et le suivi des paiements.</li>
+                    <li>Une interface fluide pour la génération et l’exportation de fichiers Excel (.xlsx) via JavaScript. Les données sont extraites dynamiquement du tableau HTML et converties au format XLSX grâce à la bibliothèque XLSX.js.</li>
+                    <li>Une fonctionnalité complète pour l’importation de données à partir de fichiers Excel, qui permet aux utilisateurs de mettre à jour la base sans saisie manuelle. L’import repose sur une interaction entre JavaScript et PHP, utilisant PHPExcel pour le traitement côté serveur.</li>
                 </ul>
 
-                <img src="../../ressources/images/projets/interface-gestion.png" alt="Interface de gestion commerciale" class="screenshot">
+                <img src="../../ressources/images/projets/interface_gestion.png" alt="Interface de gestion commerciale" class="screenshot">
 
                 <div class="highlight">
                     <p>Outils et technologies utilisés :</p>
                     <ul class="steps-list">
                         <li>PHP (programmation orientée objet)</li>
                         <li>MySQL (conception relationnelle)</li>
-                        <li>HTML5 / CSS3 / JavaScript vanilla</li>
-                        <li>FPDF pour l’export PDF</li>
+                        <li>HTML5 / CSS3 / JavaScript JQuery</li>
+                        <li>PHPExcel pour l’import XLSX</li>
                         <li>GitHub pour le versioning</li>
                     </ul>
                 </div>
             </div>
 
+            <h3 class="section-subtitle">Chiffrement des données</h3>
+            <div class="section-content">
+                <p>
+                    Dans le cadre de la gestion commerciale et comptable, certaines informations sensibles comme les coordonnées bancaires (IBAN, BIC), les numéros de mandat ou les 
+                    identifiants clients nécessitent une protection renforcée. Pour répondre à cet enjeu de sécurité, un système de chiffrement asymétrique RSA a été mis en place.
+                </p>
+
+                <h4>Pourquoi chiffrer les données ?</h4>
+                <p>Le chiffrement permet de garantir :</p>
+                <ul class="steps-list">
+                    <li><strong>La confidentialité</strong> : seules les personnes autorisées peuvent consulter les données en clair via l’application.</li>
+                    <li><strong>L’intégrité</strong> : toute tentative de modification non autorisée est détectable.</li>
+                    <li><strong>La sécurité en cas de fuite</strong> : même si des données sont compromises, elles restent illisibles sans la clé privée.</li>
+                </ul>
+
+                <h4>Fonctionnement du chiffrement</h4>
+                <ul class="steps-list">
+                    <li>Les données sensibles sont <strong>chiffrées avec une clé publique</strong> grâce à <code>openssl_public_encrypt()</code>.</li>
+                    <li>Elles sont ensuite <strong>encodées en base64</strong> pour être stockées facilement dans la base de données.</li>
+                    <li>Lors de la consultation, les données sont <strong>déchiffrées avec une clé privée</strong> via <code>openssl_private_decrypt()</code>, chargée de manière sécurisée avec un mot de passe.</li>
+                </ul>
+                <p>Ce mécanisme garantit que seule l’application, ou un utilisateur autorisé disposant de la clé privée, peut accéder aux informations sensibles.</p>
+
+                <div class="terminal">
+                    <code>function chiffrer($chaine){</code>
+                        <br>
+                        <code>$public_key = openssl_pkey_get_public('file://./chiffrement/pb.pem');</code>
+                        <br>
+                        <code>openssl_public_encrypt($chaine, $chaineChiffree, $public_key);</code>
+                        <br>
+                        <code>return base64_encode($chaineChiffree);</code>
+                        <br>
+                    <code>}</code>  
+                </div>
+
+                <h4>Intégration dans l’application</h4>
+                <p>Le chiffrement a été intégré directement dans les flux de traitement :</p>
+                <ul class="steps-list">
+                    <li>À l’<strong>importation</strong> d’un fichier Excel, les champs critiques sont automatiquement détectés et chiffrés avant insertion en base.</li>
+                    <li>Lors de la <strong>modification</strong> d’un champ sensible depuis l’interface, la nouvelle valeur est chiffrée en temps réel.</li>
+                    <li>À l’<strong>affichage</strong>, les données sont automatiquement déchiffrées pour être lisibles par l’utilisateur, sans altérer la fluidité de l’expérience.</li>
+                </ul>
+
+                <p>Cette gestion automatisée du chiffrement et du déchiffrement permet de concilier sécurité maximale et simplicité d’utilisation.</p>
+                
+            </div>
+
+            <h3 class="section-subtitle">Import / Export de données</h3>
+            <div class="section-content">
+                <p>L’un des enjeux majeurs du projet était de permettre une interaction directe entre l’application et d’autres outils comme Excel.</p>
+
+                <ul class="steps-list">
+                    <li><strong>Export des données</strong></li>
+                    <ul class="steps-list">
+                        <li>Les données du tableau HTML sont analysées ligne par ligne en JavaScript.</li>
+                        <li>Les contenus des cellules sont extraits (textes simples ou listes déroulantes).</li>
+                        <li>Ces données sont ensuite converties en une feuille Excel via <code>XLSX.utils.aoa_to_sheet</code>, puis insérées dans un classeur (<code>book_new</code>).</li>
+                        <li>Le fichier généré (table_facturation.xlsx) est automatiquement téléchargé par l’utilisateur.</li>
+                    </ul>
+
+                    <li><strong>Import des données</strong></li>
+                    <ul class="steps-list">
+                        <li>Un bouton dédié déclenche un script JavaScript qui lit le fichier Excel sélectionné.</li>
+                        <li>Le fichier est envoyé à un script PHP via AJAX avec FormData.</li>
+                        <li>Côté serveur, PHPExcel analyse les données de la feuille, identifie les colonnes pertinentes, et les insère en base après filtrage, conversion et chiffrement si nécessaire.</li>
+                        <li>Les doublons sont évités grâce à une requête <code>INSERT IGNORE</code>.</li>
+                    </ul>
+                </ul>
+
+                <img src="../../ressources/images/projets/interface_import.png" alt="Interface de gestion commerciale import" class="screenshot">
+            </div>
+
             <h3 class="section-subtitle">Résultats</h3>
             <div class="section-content">
-                <p>Le client a pu visualiser une version fonctionnelle lors d’une démonstration. Les fonctionnalités de génération de devis et de factures, ainsi que l’organisation claire de l’interface ont été saluées.</p>
+                <p>Le client (ici, un membre de mon entourage) a pu assister à une démonstration d'une version entièrement fonctionnelle de l'application. L'organisation de l’interface, la clarté du tableau de bord et la souplesse de l’import/export Excel ont été particulièrement saluées. Le projet répond efficacement aux besoins de gestion commerciale et de portabilité des données.</p>
             </div>
         </section>
 
