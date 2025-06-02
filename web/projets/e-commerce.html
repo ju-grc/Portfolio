@@ -151,6 +151,28 @@
             <div class="highlight">
                 <p>Ici, avec le rôle d'admin sur le site, nous pouvons modifier n'importe quel informations de chaque utilisateurs, de même, supprimer des comptes.</p>
             </div>
+
+            <h3 class="section-subtitle">Hachage de mot de passe</h3>
+            <div class="section-content">
+                <p>
+                    Le système de hachage utilisé dans cette classe <code>MotDePasse</code> est conçu pour renforcer la sécurité des mots de passe en combinant plusieurs techniques éprouvées. 
+                    Avant de hacher le mot de passe, on utilise un <strong>poivre</strong> (ou pepper) : une chaîne secrète connue uniquement du serveur. Ce poivre est combiné avec le mot 
+                    de passe en clair à l’aide de la fonction <code>hash_hmac</code> avec l’algorithme SHA-256. Cela permet d’ajouter une couche de sécurité supplémentaire, car même si un 
+                    attaquant accède à la base de données, il ne pourra pas facilement retrouver le mot de passe sans connaître le poivre.
+                </p>
+                <p>
+                    Le résultat de ce HMAC est ensuite passé à la fonction <code>password_hash</code>, qui utilise un algorithme de hachage adapté (comme bcrypt), avec un sel aléatoire et 
+                    une fonction de dérivation lente. Cela rend les attaques par force brute ou dictionnaire beaucoup plus difficiles, car chaque tentative est coûteuse en temps de calcul.
+                </p>
+                <p>
+                    Enfin, la vérification se fait en reproduisant exactement le même processus avec le mot de passe fourni, et en comparant le résultat avec le hachage stocké.
+                </p>
+                <p>
+                    Ce système est donc robuste : il combine un secret serveur (le poivre), un hachage sécurisé et lent, et un sel unique à chaque mot de passe. C’est une approche 
+                    fortement recommandée pour la gestion des mots de passe en production.
+                </p>
+                <img src="../../ressources/images/projets/hachage.png" alt="" class="screenshot">
+            </div>
         </section>
         
         <section class="content-section">
