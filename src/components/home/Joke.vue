@@ -14,7 +14,7 @@
       <blockquote class="relative z-10">
         <p class="text-2xl md:text-4xl font-medium text-slate-800 dark:text-slate-200 leading-relaxed italic font-serif">
           "Le code, c'est comme une blague. <br class="hidden md:block">
-          Quand on doit l'expliquer, c'est mauvais."
+          Quand on doit l'expliquer, c'est toujours mauvais."
         </p>
 
         <footer class="mt-6 text-base font-semibold text-indigo-600 dark:text-indigo-400 tracking-wider uppercase">
